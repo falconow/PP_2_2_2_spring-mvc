@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<style>
+    table.minimalistBlack {
+        border: 3px solid #000000;
+        width: 30%;
+        text-align: left;
+        border-collapse: collapse;
+    }
+    table.minimalistBlack td, table.minimalistBlack th {
+        border: 1px solid #000000;
+        padding: 5px 4px;
+    }
+    table.minimalistBlack td {
+        font-size: 23px;
+    }
+</style>
+<body>
+<div>
+    <h1>List Cars</h1>
+    <table class="minimalistBlack">
+        <tr th:align="center">
+            <td>CarModel</td>
+            <td>Year</td>
+            <td>Color</td>
+        </tr>
+        <tr th:each ="car : ${listCar}">
+            <td th:utext="${car.model}">...</td>
+            <td th:utext="${car.year}">...</td>
+            <td th:utext="${car.color}">...</td>
+        </tr>
+    </table>
+
+</div>
+</body>
+</html>
